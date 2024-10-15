@@ -25,7 +25,7 @@ jobs:
             -d '{
                   "fields": {
                     "project": {
-                      "key": "YOUR_PROJECT_KEY"  # Replace with your actual project key
+                      "key": "SEISER"  # Replace with your actual project key
                     },
                     "summary": "'"${SEISER}"'",  # The title of the Jira issue
                     "description": "Created from GitHub.",  # Additional description
