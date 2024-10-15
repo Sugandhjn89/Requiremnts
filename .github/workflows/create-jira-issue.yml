@@ -9,7 +9,7 @@ jobs:
   create-jira-issue:
     runs-on: windows-latest
     steps:
-      - name: Checkout Repository
+      - name: Requiremnts
         uses: actions/checkout@v2
 
       - name: Create Jira Issue
