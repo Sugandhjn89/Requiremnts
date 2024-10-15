@@ -3,7 +3,7 @@ name: Create Jira Issue
 on:
   push:
     paths:
-      - 'user_stories.md'  # Use forward slashes and relative path
+      - 'user_stories.md'  # Relative path to the file in the repository
 
 jobs:
   create-jira-issue:
@@ -12,14 +12,20 @@ jobs:
       - name: Requiremnts
         uses: actions/checkout@v2
 
+      - name: Read User Stories
+        id: read_user_stories
+        run: |
+          $USER_STORY = Get-Content ./user_stories.md -Raw
+          echo "::set-output name=story::$USER_STORY"
+
       - name: Create Jira Issue
         env:
           JIRA_URL: ${{ secrets.JIRA_URL }}
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          # Read the content of the user_stories.md file
-          $USER_STORY = Get-Content user_stories.md -Raw
+          # Retrieve the user story from the previous step
+          $USER_STORY = "${{ steps.read_user_stories.outputs.story }}"
           
           # Create the JSON payload
           $payload = @{
