@@ -19,7 +19,7 @@ jobs:
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
           # Read the content of the user_stories.md file
-          $USER_STORY = Get-Content ./user_stories.md -Raw
+          $USER_STORY = Get-Content user_stories.md -Raw
           
           # Create the JSON payload
           $payload = @{
