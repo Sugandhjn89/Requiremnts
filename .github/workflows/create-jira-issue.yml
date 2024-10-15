@@ -18,7 +18,7 @@ jobs:
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          USER_STORY=$(cat path/to/user_stories/GroupBillPaymentUserStories\user_stories.md)  # Adjust the path
+          USER_STORY=$(cat path/to/user_stories/C:\Users\MY HP\Desktop\GitHub_Requirements\GroupBillPaymentUserStories\user_stories.md)  # Adjust the path
           curl -X POST -H "Content-Type: application/json" \
             -u "$JIRA_USER:$JIRA_API_TOKEN" \
             -d '{
