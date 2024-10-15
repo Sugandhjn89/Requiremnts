@@ -15,7 +15,7 @@ jobs:
       - name: Read User Stories
         id: read_user_stories
         run: |
-          $USER_STORY = Get-Content ./user_stories.md -Raw
+          $USER_STORY = Get-Content .GroupBillPaymentUserStories/user_stories.md -Raw
           echo "::set-output name=story::$USER_STORY"
 
       - name: Create Jira Issue
