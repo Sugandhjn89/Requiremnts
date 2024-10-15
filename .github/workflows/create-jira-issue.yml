@@ -3,13 +3,13 @@ name: Create Jira Issue
 on:
   push:
     paths:
-      - 'path/to/user_stories/**'  # Adjust path to your user story file
+      - 'C:\Users\MY HP\Desktop\GitHub_Requirements\GroupBillPaymentUserStories\user_stories.md'  # Adjust path to your user story file
 
 jobs:
   create-jira-issue:
-    runs-on: ubuntu-latest
+    runs-on: windows
     steps:
-      - name: Checkout Repository
+      - name: Requiremnts
         uses: actions/checkout@v2
 
       - name: Create Jira Issue
@@ -24,7 +24,7 @@ jobs:
             -d '{
                   "fields": {
                     "project": {
-                      "key": "YOUR_PROJECT_KEY"
+                      "key": "SEISER"
                     },
                     "summary": "'"${USER_STORY}"'",
                     "description": "Created from GitHub.",
