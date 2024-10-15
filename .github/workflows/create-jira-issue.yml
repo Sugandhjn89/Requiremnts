@@ -3,7 +3,7 @@ name: Create Jira Issue
 on:
   push:
     paths:
-      - 'GroupBillPaymentUserStories\user_stories.md'  # Adjust path to your user story file
+      - 'user_stories.md'  # Adjust path to your user story file
 
 jobs:
   create-jira-issue:
